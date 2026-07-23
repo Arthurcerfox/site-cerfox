@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import CerfoxLogo from "/images/logo-cerfox.png?url"
+import CerfoxLogoLight from "/images/logo-cerfox-light.png?url"
+import CerfoxLogoDark from "/images/logo-cerfox-dark.png?url"
 
 const cols = [
   {
@@ -24,7 +25,8 @@ const year = new Date().getFullYear()
     <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
       <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <img :src="CerfoxLogo" alt="Logo CERFOX" class="h-40 w-auto" />
+          <img :src="CerfoxLogoLight" alt="Logo CERFOX" class="h-40 w-auto dark:hidden" />
+          <img :src="CerfoxLogoDark" alt="Logo CERFOX" class="h-40 w-auto hidden dark:block" />
         </div>
 
         <div v-for="col in cols" :key="col.title">
@@ -33,7 +35,7 @@ const year = new Date().getFullYear()
             <li v-for="link in col.links" :key="link">
               <a
                 href="#"
-                class="text-sm text-muted-foreground transition-colors hover:text-secondary"
+                class="text-sm text-muted-foreground transition-colors hover:text-secondary dark:hover:text-accent"
               >
                 {{ link }}
               </a>

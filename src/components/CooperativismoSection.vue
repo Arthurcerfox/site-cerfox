@@ -23,7 +23,7 @@ const values = [
 <template>
   <section id="cooperativismo" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-24 sm:px-6">
     <div class="mx-auto max-w-2xl text-center">
-      <span class="text-md font-mono font-bold uppercase tracking-wider text-secondary">
+      <span class="text-md font-mono font-bold uppercase tracking-wider text-secondary dark:text-accent">
         Cooperativismo
       </span>
       <h2 class="mt-3 font-heading text-3xl font-extrabold text-balance sm:text-4xl">

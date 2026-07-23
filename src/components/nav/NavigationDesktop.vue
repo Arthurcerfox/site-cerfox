@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 import { navigationLinks } from "@/components/nav/data/links"
+import { cn } from "@/lib/utils"
 </script>
 
 <template>
@@ -11,7 +12,7 @@ import { navigationLinks } from "@/components/nav/data/links"
             :key="link.label"
           >
             <template v-if="link.items">
-              <NavigationMenuTrigger>
+              <NavigationMenuTrigger class="bg-transparent hover:bg-accent text-background-foreground data-[state=open]:text-background-foreground data-[state=open]:bg-transparent">
                 {{ link.label }}
               </NavigationMenuTrigger>
 
@@ -22,8 +23,7 @@ import { navigationLinks } from "@/components/nav/data/links"
                     :key="item.href"
                   >
                     <NavigationMenuLink as-child>
-                      <a
-                        :href="item.href"
+                       <a :href="item.href"
                         class="block rounded-md p-2 hover:bg-accent"
                       >
                         {{ item.label }}
@@ -37,7 +37,7 @@ import { navigationLinks } from "@/components/nav/data/links"
             <template v-else>
               <NavigationMenuLink
                 :href="link.href"
-                :class="navigationMenuTriggerStyle()"
+                :class="cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-accent dark:text-primary-foreground')"
               >
                 {{ link.label }}
               </NavigationMenuLink>

@@ -28,7 +28,7 @@ const points = [
       </div>
 
       <div>
-        <span class="text-md font-mono font-bold uppercase tracking-wider text-secondary">
+        <span class="text-md font-mono font-bold uppercase tracking-wider text-secondary dark:text-accent">
           Sobre a CERFOX
         </span>
         <h2 class="mt-3 font-heading text-3xl font-extrabold text-balance sm:text-4xl">
@@ -43,7 +43,7 @@ const points = [
         <ul class="mt-8 space-y-3">
           <li v-for="point in points" :key="point" class="flex items-start gap-3">
             <span
-              class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-secondary text-secondary-foreground"
+              class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground"
             >
               <Check class="h-3 w-3" />
             </span>

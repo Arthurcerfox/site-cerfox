@@ -11,9 +11,9 @@ import { Button } from "@/components/ui/button"
       class="absolute inset-0 h-full w-full object-cover opacity-25"
       aria-hidden="true"
     />
-    <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-secondary/70" />
+    <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent/60" />
 
-    <div class="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-15">
+    <div class="relative mx-auto max-w-6xl px-4 py-26 sm:px-6">
       <div class="max-w-2xl">
         <span
           class="inline-flex font-mono items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-sm font-medium"
