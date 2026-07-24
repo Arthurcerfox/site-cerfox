@@ -18,7 +18,7 @@ function submit() {
 </script>
 
 <template>
-  <section id="contato" class="scroll-mt-20 bg-primary py-24 text-primary-foreground">
+  <section id="contato" class="scroll-mt-20 bg-primary py-18 text-primary-foreground">
     <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2">
       <div>
         <span class="text-md font-mono font-bold uppercase tracking-wider text-accent">

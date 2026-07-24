@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetFooter, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { Menu } from "@lucide/vue"
 
-import CerfoxLogoLight from "/images/logo-cerfox-light.png?url"
-import CerfoxLogoDark from "/images/logo-cerfox-dark.png?url"
+import CerfoxLogo from "/images/logo-cerfox-light.png?url"
 
 import { navigationLinks } from "@/components/nav/data/links"
 import { ref } from "vue"
@@ -20,7 +19,7 @@ const open = ref(false)
     <Button
       variant="ghost"
       size="icon"
-      class="md:hidden"
+      class="md:hidden text-background"
     >
       <Menu class="h-6 w-6" />
     </Button>
@@ -29,8 +28,7 @@ const open = ref(false)
   <SheetContent side="right">
     <SheetHeader>
       <SheetTitle>
-        <img :src="CerfoxLogoLight" alt="Logo CERFOX" class="h-25 w-auto dark:hidden" />
-        <img :src="CerfoxLogoDark" alt="Logo CERFOX" class="h-25 w-auto hidden dark:block" />
+        <img :src="CerfoxLogo" alt="Logo CERFOX" class="h-25 w-auto dark:hidden" />
       </SheetTitle>
     </SheetHeader>
 

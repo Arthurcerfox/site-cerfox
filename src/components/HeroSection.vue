@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, Zap, MessageCircleMore } from "@lucide/vue"
+import { ArrowRight, MessageCircleMore } from "@lucide/vue"
 import { Button } from "@/components/ui/button"
 </script>
 
@@ -13,14 +13,8 @@ import { Button } from "@/components/ui/button"
     />
     <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-accent/60" />
 
-    <div class="relative mx-auto max-w-6xl px-4 py-26 sm:px-6">
+    <div class="relative mx-auto max-w-6xl px-4 py-30 sm:px-6">
       <div class="max-w-2xl">
-        <span
-          class="inline-flex font-mono items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-sm font-medium"
-        >
-          <Zap class="h-4 w-4 text-accent" />
-          Energia que transforma comunidades
-        </span>
 
         <h1
           class="mt-6 font-heading text-4xl font-extrabold leading-tight text-balance sm:text-5xl md:text-7xl"

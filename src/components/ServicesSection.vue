@@ -26,9 +26,9 @@ const services = [
 </script>
 
 <template>
-  <section id="solucoes" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-24 sm:px-6">
-    <div class="mx-auto max-w-2xl text-center">
-      <span class="text-md font-mono font-bold uppercase tracking-wider text-secondary dark:text-accent">
+  <section id="solucoes" class="mx-auto max-w-6xl scroll-mt-20 px-4 py-18 sm:px-6">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <span class="text-md font-mono font-bold uppercase tracking-wider text-primary">
         Nossas soluções
       </span>
       <h2 class="mt-3 font-heading text-3xl font-extrabold text-balance sm:text-4xl">

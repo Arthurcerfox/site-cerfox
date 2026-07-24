@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils"
             :key="link.label"
           >
             <template v-if="link.items">
-              <NavigationMenuTrigger class="bg-transparent hover:bg-accent text-background-foreground data-[state=open]:text-background-foreground data-[state=open]:bg-transparent">
+              <NavigationMenuTrigger class="bg-transparent hover:text-background text-background data-[state=open]:text-background data-[state=open]:bg-transparent">
                 {{ link.label }}
               </NavigationMenuTrigger>
 
@@ -37,7 +37,7 @@ import { cn } from "@/lib/utils"
             <template v-else>
               <NavigationMenuLink
                 :href="link.href"
-                :class="cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-accent dark:text-primary-foreground')"
+                :class="cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-accent hover:text-background text-background')"
               >
                 {{ link.label }}
               </NavigationMenuLink>

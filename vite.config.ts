@@ -15,4 +15,5 @@ export default defineConfig({
     port: 5123,
     allowedHosts: true,
   },
+    assetsInclude: ['**/*.lottie'],
 })

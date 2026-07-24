@@ -11,7 +11,7 @@ const points = [
 </script>
 
 <template>
-  <section id="sobre" class="scroll-mt-20 bg-muted/100 py-24">
+  <section id="sobre" class="scroll-mt-20 bg-background py-18">
     <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
       <div class="relative">
         <img
@@ -28,7 +28,7 @@ const points = [
       </div>
 
       <div>
-        <span class="text-md font-mono font-bold uppercase tracking-wider text-secondary dark:text-accent">
+        <span class="text-md font-mono font-bold uppercase tracking-wider text-primary">
           Sobre a CERFOX
         </span>
         <h2 class="mt-3 font-heading text-3xl font-extrabold text-balance sm:text-4xl">
