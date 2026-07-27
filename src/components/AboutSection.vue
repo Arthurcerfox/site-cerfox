@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { Check } from "@lucide/vue"
+import { Check, ArrowRight } from "@lucide/vue"
 import { Button } from "@/components/ui/button"
+
 
 const points = [
   "Gestão democrática e transparente com os cooperados",
@@ -31,17 +32,17 @@ const points = [
         <span class="text-md flex font-mono font-bold uppercase tracking-wider text-primary">
           Sobre a CERFOX
         </span>
-        <h2 class="mt-5 font-heading text-3xl font-extrabold text-balance sm:text-4xl">
+        <h2 class="mt-4 font-heading text-3xl font-extrabold text-balance sm:text-4xl">
           Facilitamos o acesso à energia, melhorando a qualidade de vida dos cooperados
         </h2>
-        <p class="mt-5 font-text text-lg leading-relaxed text-muted-foreground">
+        <p class="mt-3 font-text text-lg leading-relaxed text-muted-foreground">
           A <strong class="font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">CERFOX</strong>
           foi fundada em 9 de julho de 1962, na cidade de Soledade, por um grupo de 16 pessoas,
           com o objetivo social de promover o desenvolvimento regional, 
           facilitando o acesso à energia, à saúde e à disponibilização de produtos, 
           serviços e bens de consumo de necessidade básica, visando à melhoria da qualidade de vida dos cooperados,
           dos colaboradores e da comunidade.</p>
-        <ul class="mt-5 space-y-3">
+        <ul class="mt-3 space-y-3">
           <li v-for="point in points" :key="point" class="flex items-start gap-3">
             <span
               class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground"
@@ -52,7 +53,10 @@ const points = [
           </li>
         </ul>
 
-        <Button as="a" href="#cooperativismo" size="lg" class="font-text mt-5">Leia mais</Button>
+        <Button as="a" href="#cooperativismo" size="lg" class="mt-4 w-full lg:w-auto" variant="default">
+          Leia mais
+          <ArrowRight class="h-4 w-4" />
+        </Button>
       </div>
     </div>
   </section>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CerfoxLogo from "/images/logo-cerfox-dark.png?url"
+import CerfoxLogo from "/images/logo-cerfox-light.png?url"
 
 import { Icon } from "@iconify/vue"
 
@@ -53,7 +53,7 @@ const year = new Date().getFullYear()
             <li v-for="link in col.links" :key="link">
               <a
                 href="#"
-                class="text-sm text-muted-foreground transition-colors hover:text-secondary dark:hover:text-accent"
+                class="text-sm text-muted-foreground hover:text-primary"
               >
                 {{ link }}
               </a>
