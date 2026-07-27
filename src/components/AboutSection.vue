@@ -28,19 +28,20 @@ const points = [
       </div>
 
       <div>
-        <span class="text-md font-mono font-bold uppercase tracking-wider text-primary">
+        <span class="text-md flex font-mono font-bold uppercase tracking-wider text-primary">
           Sobre a CERFOX
         </span>
-        <h2 class="mt-3 font-heading text-3xl font-extrabold text-balance sm:text-4xl">
-          Uma cooperativa que cresce com sua comunidade
+        <h2 class="mt-5 font-heading text-3xl font-extrabold text-balance sm:text-4xl">
+          Facilitamos o acesso à energia, melhorando a qualidade de vida dos cooperados
         </h2>
-        <p class="mt-4 font-text text-lg leading-relaxed text-muted-foreground">
-          A CERFOX nasceu para levar energia
-          onde ela é essencial. Mais do que distribuir energia, acreditamos em pessoas e no
-          poder da união para transformar a realidade de cada cooperado.
-        </p>
-
-        <ul class="mt-8 space-y-3">
+        <p class="mt-5 font-text text-lg leading-relaxed text-muted-foreground">
+          A <strong class="font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">CERFOX</strong>
+          foi fundada em 9 de julho de 1962, na cidade de Soledade, por um grupo de 16 pessoas,
+          com o objetivo social de promover o desenvolvimento regional, 
+          facilitando o acesso à energia, à saúde e à disponibilização de produtos, 
+          serviços e bens de consumo de necessidade básica, visando à melhoria da qualidade de vida dos cooperados,
+          dos colaboradores e da comunidade.</p>
+        <ul class="mt-5 space-y-3">
           <li v-for="point in points" :key="point" class="flex items-start gap-3">
             <span
               class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground"
@@ -51,7 +52,7 @@ const points = [
           </li>
         </ul>
 
-        <Button as="a" href="#cooperativismo" size="lg" class="font-text mt-9">Leia mais</Button>
+        <Button as="a" href="#cooperativismo" size="lg" class="font-text mt-5">Leia mais</Button>
       </div>
     </div>
   </section>

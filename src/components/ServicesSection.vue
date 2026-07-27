@@ -35,7 +35,7 @@ const services = [
         Tudo o que o cooperado precisa em um só lugar
       </h2>
       <p class="mt-4 font-text text-lg leading-relaxed text-muted-foreground">
-        Da energia à conectividade, a CERFOX oferece serviços completos com o cuidado de
+        Da energia à conectividade, a <strong class="font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">CERFOX</strong> oferece serviços completos com o cuidado de
         quem faz parte da comunidade.
       </p>
     </div>

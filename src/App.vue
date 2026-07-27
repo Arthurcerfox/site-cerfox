@@ -15,11 +15,10 @@ import SiteFooter from "./components/SiteFooter.vue"
     <SiteHeader />
     <main>
       <HeroSection />
-      <AboutSection />
       <ServicesSection />
       <StatsMarquee />
+      <AboutSection />
       <FaltaDeEnergiaSection />
-      <CooperativismoSection />
       <ContactSection />
     </main>
     <SiteFooter />

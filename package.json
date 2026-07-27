@@ -12,6 +12,7 @@
     "@lottiefiles/dotlottie-vue": "^0.11.23",
     "@lucide/vue": "^1.26.0",
     "@vueuse/core": "^12.8.2",
+    "aos": "^2.3.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "reka-ui": "^2.10.1",

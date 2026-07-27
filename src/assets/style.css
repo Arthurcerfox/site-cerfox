@@ -60,6 +60,7 @@
 }
 
 :root {
+  --header-height: 5rem;
   --background: oklch(1.000 0.000 0);
   --foreground: oklch(0.285 0.012 243.6);
   --card: oklch(1.000 0.000 0);
@@ -139,6 +140,18 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 7rem;
   }
 }
 
