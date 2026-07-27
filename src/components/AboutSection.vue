@@ -11,11 +11,11 @@ const points = [
 </script>
 
 <template>
-  <section id="sobre" class="scroll-mt-20 bg-background py-18">
-    <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+  <section id="sobre" class="scroll-mt-20 bg-background py-10 lg:py-24">
+    <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
       <div class="relative">
         <img
-          src="/images/sobre-cooperativa.png"
+          src="/public/images/hero-energia.png"
           alt="Técnico da CERFOX trabalhando em infraestrutura de energia"
           class="aspect-4/3 w-full rounded-2xl object-cover shadow-lg"
         />

@@ -5,11 +5,11 @@ import { ArrowRight } from "@lucide/vue";
 </script>
 
 <template>
-  <section id="sobre" class="scroll-mt-20 bg-background py-18">
-    <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+  <section id="falta-de-energia" class="scroll-mt-20 py-10 lg:py-24">
+    <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
       <div>
         <span class="text-md font-mono font-bold uppercase tracking-wider text-secondary">
-            Falta de Energia
+          Falta de Energia
         </span>
         <h2 class="mt-5 font-heading text-3xl font-extrabold text-balance sm:text-4xl">
           Deseja informar falta de energia?

@@ -27,7 +27,7 @@ onUnmounted(() => {
     isScrolled ? 
     'bg-primary/80 backdrop-blur-xl shadow-lg shadow-black/10'
     : 'bg-primary']">
-    <div class="mx-auto flex h-20 max-w-6xl items-center justify-between px-4 sm:h-24 sm:px-6 lg:h-28">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:h-24 sm:px-6 lg:h-28">
       <a href="#" aria-label="CERFOX — Página Inicial">
         <img :src="CerfoxLogo" alt="Logo CERFOX" class="h-24 w-auto sm:h-28 md:h-32 lg:h-36" />
       </a>

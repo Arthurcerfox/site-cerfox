@@ -6,7 +6,9 @@ import ServicesSection from "./components/ServicesSection.vue"
 import AboutSection from "./components/AboutSection.vue"
 import CooperativismoSection from "./components/CooperativismoSection.vue"
 import FaltaDeEnergiaSection from "./components/FaltaDeEnergiaSection.vue"
+import VagasSection from "./components/VagasSection.vue"
 import ContactSection from "./components/ContactSection.vue"
+import BlogSection from "./components/BlogSection.vue"
 import SiteFooter from "./components/SiteFooter.vue"
 </script>
 
@@ -19,6 +21,8 @@ import SiteFooter from "./components/SiteFooter.vue"
       <StatsMarquee />
       <AboutSection />
       <FaltaDeEnergiaSection />
+      <VagasSection />
+      <BlogSection />
       <ContactSection />
     </main>
     <SiteFooter />

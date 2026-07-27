@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { ArrowRight, MessageCircleMore } from "@lucide/vue"
 import { Button } from "@/components/ui/button"
+import { onMounted } from "vue";
+import AOS from 'aos'
+
+onMounted(() => {
+  AOS.init()
+})
 </script>
 
 <template>
-  <section
-    class="relative min-h-[calc(100dvh-var(--header-height))] overflow-hidden bg-primary text-primary-foreground"
-  >
+  <section class="relative min-h-[calc(100dvh-var(--header-height))] overflow-hidden bg-primary text-primary-foreground">
     <img
       src="/images/hero-energia.png"
       alt=""
@@ -16,10 +20,10 @@ import { Button } from "@/components/ui/button"
 
     <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/100 to-accent/60" />
 
-    <div class="relative mx-auto grid min-h-[calc(100dvh-var(--header-height))] max-w-6xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2">
+    <div class="relative mx-auto grid min-h-[calc(100dvh-var(--header-height))] max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2">
       <div class="flex flex-col">
-        <div class="max-w-xl">
-          <h1 class="font-heading text-4xl font-extrabold leading-tight text-balance sm:text-5xl lg:text-6xl">
+        <div class="max-w-xl text-center lg:text-left">
+          <h1 data-aos="fade-down" data-aos-duration="2000" class="font-heading text-4xl font-extrabold leading-tight text-balance sm:text-5xl lg:text-6xl">
             Facilitando o acesso à energia para nossos cooperados
           </h1>
 
@@ -55,7 +59,6 @@ import { Button } from "@/components/ui/button"
         </div>
       </div>
 
-      <!-- Right column (Desktop only) -->
       <div class="hidden h-full items-center justify-center lg:flex">
       </div>
     </div>

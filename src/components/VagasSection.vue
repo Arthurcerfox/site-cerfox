@@ -28,18 +28,19 @@ const services = [
 </script>
 
 <template>
-  <section id="solucoes" class="mx-auto max-w-7xl scroll-mt-20 px-4 py-10 lg:py-24 sm:px-6">
+  <section id="vagas" class="mx-auto bg-accent/70 max-w-7xl scroll-mt-20 px-4 py-10 lg:py-24 sm:px-6">
     <div class="mx-auto max-w-3xl text-center">
       <span class="text-md font-mono font-bold uppercase tracking-wider text-primary">
-        Nossas soluções
+        Trabalhe Conosco
       </span>
       <h2 class="mt-3 font-heading text-3xl font-extrabold text-balance sm:text-4xl">
-        Tudo o que o cooperado precisa em um só lugar
+        Confira nossas vagas de emprego
       </h2>
       <p class="mt-4 font-text text-lg leading-relaxed text-muted-foreground">
-        Da energia à conectividade, a <strong class="font-extrabold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">CERFOX</strong> oferece serviços completos com o cuidado de
-        quem faz parte da comunidade.
-      </p>
+        Acreditamos que pessoas fazem a diferença.
+        Venha construir o futuro da energia e da
+        conectividade com a nossa equipe.     
+     </p>
     </div>
 
     <div class="mt-14 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">

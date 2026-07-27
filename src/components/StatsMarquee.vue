@@ -11,8 +11,8 @@ const stats = [
 </script>
 
 <template>
-  <section class="bg-background py-20">
-       <Marquee duration="38s">
+  <section class="bg-background py-5 lg:py-10">
+       <Marquee duration="28s">
       <div
         v-for="(stat, i) in stats"
         :key="i"
