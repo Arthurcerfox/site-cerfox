@@ -1,12 +1,6 @@
 <script setup lang="ts">
 import { ArrowRight, MessageCircleMore } from "@lucide/vue"
 import { Button } from "@/components/ui/button"
-import { onMounted } from "vue";
-import AOS from 'aos'
-
-onMounted(() => {
-  AOS.init()
-})
 </script>
 
 <template>
@@ -23,7 +17,7 @@ onMounted(() => {
     <div class="relative mx-auto grid min-h-[calc(100dvh-var(--header-height))] max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2">
       <div class="flex flex-col">
         <div class="max-w-xl text-left">
-          <h1 data-aos="fade-down" data-aos-duration="2000" class="font-heading text-4xl font-extrabold leading-tight text-balance sm:text-5xl lg:text-6xl">
+          <h1 class="font-heading text-4xl font-extrabold leading-tight text-balance sm:text-5xl lg:text-6xl">
             Facilitando o acesso à energia para nossos cooperados
           </h1>
 

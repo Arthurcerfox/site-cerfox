@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "@lucide/vue";
+import { ArrowRight, PhoneOutgoing } from "@lucide/vue";
 
 </script>
 
@@ -15,13 +15,21 @@ import { ArrowRight } from "@lucide/vue";
           Deseja informar falta de energia?
         </h2>
         <p class="mt-3 font-text text-lg leading-relaxed text-muted-foreground">
-            Registre aqui para que possamos verificar a sua rede elétrica. Em caso de emergência, entre em contato pelo telefone: <strong>0800 6484800</strong>.
+          Registre aqui para que possamos verificar a sua rede elétrica. Em caso de
+          emergência, por favor entre em contato pelo telefone abaixo.
         </p>
 
-        <Button as="a" href="#cooperativismo" size="lg" class="mt-4 w-full lg:w-auto" variant="accent">
+        <div class="mt-4 flex flex-row gap-3">
+          <Button as="a" href="tel:08006484800" size="lg" variant="accent" class="flex-1">
+            <PhoneOutgoing class="h-4 w-4" />
+            0800 6484800
+          </Button>
+
+          <Button as="a" href="#cooperativismo" size="lg" class="flex-1" variant="default">
             Clique aqui
             <ArrowRight class="h-4 w-4" />
-        </Button>
+          </Button>
+        </div>
       </div>
       <div>
         <img

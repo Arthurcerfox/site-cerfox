@@ -2,7 +2,6 @@
 import { Check, ArrowRight } from "@lucide/vue"
 import { Button } from "@/components/ui/button"
 
-
 const points = [
   "Gestão democrática e transparente com os cooperados",
   "Compromisso com o desenvolvimento regional",

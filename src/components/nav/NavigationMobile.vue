@@ -24,8 +24,8 @@ const year = new Date().getFullYear()
       </Button>
     </SheetTrigger>
 
-    <SheetContent side="right">
-      <SheetHeader>
+    <SheetContent side="right" class="flex h-full flex-col p-0">
+      <SheetHeader class="shrink-0">
         <SheetTitle>
           Menu
         </SheetTitle>
@@ -34,40 +34,43 @@ const year = new Date().getFullYear()
         </SheetDescription>
       </SheetHeader>
 
-      <Accordion type="single" collapsible class="w-full">
-        <AccordionItem
-          v-for="link in navigationLinks"
-          :key="link.label"
-          :value="link.label"
-        >
-          <AccordionTrigger class="w-full text-left text-md px-5 text-bold">
-            {{ link.label }}
-          </AccordionTrigger>
+      <div class="flex-1 overflow-y-auto px-0">
+        <Accordion type="single" collapsible class="w-full">
+          <AccordionItem
+            v-for="link in navigationLinks"
+            :key="link.label"
+            :value="link.label"
+          >
+            <AccordionTrigger class="w-full text-left text-md px-5 text-bold">
+              {{ link.label }}
+            </AccordionTrigger>
 
-          <AccordionContent>
-            <ul class="flex flex-col gap-2">
-              <li
-                v-for="item in link.items"
-                :key="item.href"
-              >
-                <Button
-                  as="a"
-                  :href="item.href"
-                  variant="ghost"
-                  size="sm"
-                  class="w-full justify-start rounded-md px-5 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+            <AccordionContent>
+              <ul class="flex flex-col gap-2">
+                <li
+                  v-for="item in link.items"
+                  :key="item.href"
                 >
-                  {{ item.label }}
-                </Button>
-              </li>
-            </ul>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-      <SheetFooter>
+                  <Button
+                    as="a"
+                    :href="item.href"
+                    variant="ghost"
+                    size="sm"
+                    class="w-full justify-start rounded-md px-5 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                  >
+                    {{ item.label }}
+                  </Button>
+                </li>
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
+
+      <SheetFooter class="shrink-0">
         <SheetClose as-child>
           <Button
-            variant="secondary"
+            variant="accent"
             size="sm"
             class="w-full justify-center rounded-md px-4 py-2 text-sm font-bold hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
           >
