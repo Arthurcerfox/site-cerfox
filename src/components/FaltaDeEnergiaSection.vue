@@ -5,7 +5,7 @@ import { ArrowRight, PhoneOutgoing } from "@lucide/vue";
 </script>
 
 <template>
-  <section id="falta-de-energia" class="scroll-mt-20 py-10 lg:py-24">
+  <section id="falta-de-energia" class="scroll-mt-20 py-10 lg:py-24 bg-accent">
     <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
       <div>
         <span class="text-md font-mono font-bold uppercase tracking-wider text-primary">
@@ -15,19 +15,31 @@ import { ArrowRight, PhoneOutgoing } from "@lucide/vue";
           Deseja informar falta de energia?
         </h2>
         <p class="mt-3 font-text text-lg leading-relaxed text-muted-foreground">
-          Registre aqui para que possamos verificar a sua rede elétrica. Em caso de
+          Informe falta de energia aqui para que possamos verificar a sua rede elétrica. Em caso de
           emergência, por favor entre em contato pelo telefone abaixo.
         </p>
 
-        <div class="mt-4 flex flex-row gap-3">
-          <Button as="a" href="tel:08006484800" size="lg" variant="accent" class="flex-1">
-            <PhoneOutgoing class="h-4 w-4" />
+        <div class="mt-4 grid lg:flex flex-row  gap-3 mx-auto">
+          <Button
+            as="a"
+            href="tel:08006484800"
+            size="lg"
+            variant="outline"
+            class="min-w-0 flex-1 whitespace-normal text-center leading-tight"
+          >
+            <PhoneOutgoing class="h-4 w-4 shrink-0" />
             0800 6484800
           </Button>
 
-          <Button as="a" href="#cooperativismo" size="lg" class="flex-1" variant="default">
-            Clique aqui
-            <ArrowRight class="h-4 w-4" />
+          <Button
+            as="a"
+            href="#cooperativismo"
+            size="lg"
+            variant="default"
+            class="min-w-0 flex-1 whitespace-normal text-center leading-tight"
+          >
+            Falta de energia 
+            <ArrowRight class="h-4 w-4 shrink-0" />
           </Button>
         </div>
       </div>

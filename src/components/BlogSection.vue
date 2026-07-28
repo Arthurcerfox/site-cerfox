@@ -1,27 +1,23 @@
 <script setup lang="ts">
-import { Zap, Sun, Wifi } from "@lucide/vue"
 import ServiceCard from "./ui/ServiceCard.vue";
 
 import DistrEnergiaFoto from "@/../public/images/teste.jpg"
 import DistrEnergiaFoto2 from "@/../public/images/hero-energia.png"
 import DistrEnergiaFoto3 from "@/../public/images/sobre-cooperativa.png"
-const services = [
+const noticias = [
   {
-    icon: Zap,
-    title: "Distribuição de Energia",
-    desc: "Fornecimento contínuo e seguro de energia elétrica para propriedades rurais e urbanas da região.",
+    title: "Relatório de Transparência e Igualdade Salarial de Mulheres ...",
+    desc: "A Cerfox está divulgando o relatório de transparência e igualdade salarial de mulheres e homens",
     image: DistrEnergiaFoto
   },
   {
-    icon: Sun,
-    title: "Geração de Energia",
-    desc: "Investimento em fontes de geração próprias para garantir autonomia e sustentabilidade aos cooperados.",
+    title: "Sorteio Assistência Familiar Setembro",
+    desc: "GANHADORES DE SETEMBRO! A CERFOX divulga os contemplados da Promoção Assistência Familia...",
     image: DistrEnergiaFoto2
   },
   {
-    icon: Wifi,
-    title: "Telecomunicações",
-    desc: "Internet e conectividade de qualidade levando o mundo digital para todos os associados.",
+    title: "Outubro terá bandeira vermelha patamar 1",
+    desc: "Outubro terá bandeira vermelha patamar 1 A ANEEL anunciou que haverá acréscimo de R$ 4,46 a c...",
     image: DistrEnergiaFoto3
   }
 ]
@@ -43,12 +39,11 @@ const services = [
 
     <div class="mt-14 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
       <ServiceCard
-        v-for="service in services"
-        :key="service.title"
-        :title="service.title"
-        :desc="service.desc"
-        :image="service.image"
-        :icon="service.icon"
+        v-for="noticia in noticias"
+        :key="noticia.title"
+        :title="noticia.title"
+        :desc="noticia.desc"
+        :image="noticia.image"
       />
     </div>
   </section>

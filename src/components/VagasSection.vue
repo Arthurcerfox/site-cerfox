@@ -28,7 +28,7 @@ const services = [
 </script>
 
 <template>
-  <section id="vagas" class="mx-auto bg-accent/70 max-w-7xl scroll-mt-20 px-4 py-10 lg:py-24 sm:px-6">
+  <section id="vagas" class="mx-auto max-w-7xl scroll-mt-20 px-4 py-10 lg:py-24 sm:px-6">
     <div class="mx-auto max-w-3xl text-left lg:text-center">
       <span class="text-md font-mono font-bold uppercase tracking-wider text-primary">
         Trabalhe Conosco

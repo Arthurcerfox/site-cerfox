@@ -19,11 +19,9 @@ const points = [
           alt="Técnico da CERFOX trabalhando em infraestrutura de energia"
           class="aspect-4/3 w-full rounded-2xl object-cover shadow-lg"
         />
-        <div
-          class="absolute -bottom-6 -right-4 hidden rounded-2xl bg-accent px-6 py-4 text-accent-foreground shadow-lg sm:block"
-        >
-          <p class="font-heading text-3xl font-extrabold">60+</p>
-          <p class="text-sm font-semibold">anos de experiência</p>
+        <div class="absolute -bottom-4 -right-2 rounded-2xl bg-accent px-4 py-3 text-accent-foreground shadow-lg sm:-bottom-6 sm:-right-4 sm:px-6 sm:py-4">
+          <p class="font-heading text-2xl font-extrabold sm:text-3xl">60+</p>
+          <p class="text-xs font-semibold sm:text-sm">anos de experiência</p>
         </div>
       </div>
 

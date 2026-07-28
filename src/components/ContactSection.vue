@@ -1,21 +1,11 @@
 <script setup lang="ts">
 import { ref, computed } from "vue"
-import { Phone, Mail, MapPin, Send } from "@lucide/vue"
+import { Phone, PhoneCall, Mail, MapPin, Send } from "@lucide/vue"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import {
-  Field,
-  FieldGroup,
-  FieldLabel,
-} from "@/components/ui/field"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 const form = ref({
   nome: "",
@@ -29,6 +19,7 @@ const enviado = ref(false)
 
 const contatos = [
   { icon: Phone, label: "Telefone", value: "(54) 3352-0000" },
+  { icon: PhoneCall, label: "Telefone", value: "0800 6484800" },
   { icon: Mail, label: "E-mail", value: "contato@cerfox.com.br" },
   { icon: MapPin, label: "Endereço", value: "Fontoura Xavier, RS" },
 ]

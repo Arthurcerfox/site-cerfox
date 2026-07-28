@@ -8,7 +8,7 @@ defineProps<{
   title: string
   desc: string
   image: string
-  icon: LucideIcon
+  icon?: LucideIcon
 }>()
 </script>
 
@@ -21,16 +21,14 @@ defineProps<{
         class="aspect-video w-full object-cover"
       />
 
-      <div
-        class="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm"
-      >
+      <div v-if="icon" class="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
         <component :is="icon" class="h-5 w-5" />
       </div>
     </div>
 
     <CardHeader class="flex-1 gap-2">
-      <CardTitle class="text-lg">{{ title }}</CardTitle>
-      <CardDescription class="text-md">
+      <CardTitle class="text-lg line-clamp-2">{{ title }}</CardTitle>
+      <CardDescription class="text-md line-clamp-3">
         {{ desc }}
       </CardDescription>
     </CardHeader>

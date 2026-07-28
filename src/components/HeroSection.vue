@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/button"
     <img
       src="/images/hero-energia.png"
       alt=""
-      class="absolute inset-0 h-full w-full object-cover opacity-80"
+      class="absolute inset-0 h-full w-full object-cover opacity-100"
       aria-hidden="true"
     />
 
-    <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/100 to-accent/60" />
+    <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/100 to-accent/70" />
 
     <div class="relative mx-auto grid min-h-[calc(100dvh-var(--header-height))] max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2">
       <div class="flex flex-col">
