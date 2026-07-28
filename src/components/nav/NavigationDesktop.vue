@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils"
             :key="link.label"
           >
             <template v-if="link.items">
-              <NavigationMenuTrigger class="bg-transparent hover:text-background text-background data-[state=open]:text-background data-[state=open]:bg-transparent">
+              <NavigationMenuTrigger class="bg-transparent text-background hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground">
                 {{ link.label }}
               </NavigationMenuTrigger>
 
@@ -24,7 +24,7 @@ import { cn } from "@/lib/utils"
                   >
                     <NavigationMenuLink as-child>
                        <a :href="item.href"
-                        class="block rounded-md p-2 hover:bg-accent"
+                        class="block rounded-md p-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                       >
                         {{ item.label }}
                       </a>
@@ -37,7 +37,7 @@ import { cn } from "@/lib/utils"
             <template v-else>
               <NavigationMenuLink
                 :href="link.href"
-                :class="cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-accent hover:text-background text-background')"
+                :class="cn(navigationMenuTriggerStyle(), 'bg-transparent text-background hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground')"
               >
                 {{ link.label }}
               </NavigationMenuLink>

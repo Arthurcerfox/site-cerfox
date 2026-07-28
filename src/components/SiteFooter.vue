@@ -69,7 +69,7 @@ const year = new Date().getFullYear()
 
 <template>
   <footer class="border-t border-border bg-card">
-    <div class="mx-auto max-w-7xl px-4 py-5 lg:py-20 sm:px-6">
+    <div class="mx-auto max-w-7xl px-4 py-5 lg:py-16 sm:px-6">
       <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
         <div>
           <img :src="CerfoxLogo" alt="Logo CERFOX" class="h-18 w-auto" />
@@ -105,27 +105,25 @@ const year = new Date().getFullYear()
         <p class="text-sm text-muted-foreground">
           &copy; {{ year }} CERFOX. Todos os direitos reservados.
         </p>
-
-         <div class="flex items-center gap-3">
-          <a
-            v-for="social in socialLinks"
-            :key="social.name"
-            :href="social.href"
-            target="_blank"
-            rel="noopener noreferrer"
-            :aria-label="social.name"
-            class="flex h-9 w-9 items-center justify-center text-muted-foreground hover:text-primary"
-          >
-            <Icon :icon="social.icon" class="h-5 w-5" />
-          </a>
-        </div>
-
-        <a 
+          <div class="flex items-center gap-3">
+            <a
+              v-for="social in socialLinks"
+              :key="social.name"
+              :href="social.href"
+              target="_blank"
+              rel="noopener noreferrer"
+              :aria-label="social.name"
+              class="flex h-9 w-9 items-center justify-center text-muted-foreground hover:text-primary"
+            >
+              <Icon :icon="social.icon" class="h-4 w-4" />
+            </a>
+          </div>
+      </div>
+       <a 
           href="#"
           class="text-sm text-muted-foreground hover:text-primary">
           Política de Privacidade
         </a>
-      </div>
     </div>
   </footer>
 </template>

@@ -1,34 +1,39 @@
 <script setup lang="ts">
 import { Button } from "@/components/ui/button"
-import { ArrowRight, PhoneOutgoing } from "@lucide/vue";
-
+import { ArrowRight, PhoneOutgoing, ZapOff } from "@lucide/vue";
 </script>
 
 <template>
-  <section id="falta-de-energia" class="scroll-mt-20 py-10 lg:py-24 bg-accent">
-    <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
-      <div>
-        <span class="text-md font-mono font-bold uppercase tracking-wider text-primary">
-          Falta de Energia
-        </span>
-        <h2 class="mt-4 font-heading text-3xl font-extrabold text-balance sm:text-4xl">
-          Deseja informar falta de energia?
-        </h2>
-        <p class="mt-3 font-text text-lg leading-relaxed text-muted-foreground">
-          Informe falta de energia aqui para que possamos verificar a sua rede elétrica. Em caso de
-          emergência, por favor entre em contato pelo telefone abaixo.
-        </p>
+  <section id="falta-de-energia" class="scroll-mt-20 py-10 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div
+        class="flex flex-col gap-6 overflow-hidden rounded-2xl bg-accent p-6 text-accent-foreground shadow-lg sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8"
+      >
+        <div class="flex items-start gap-4">
+          <div>
+            <span class="font-mono text-sm font-bold uppercase tracking-wider text-accent-foreground/70">
+              Falta de Energia
+            </span>
+            <h2 class="mt-1 font-heading text-2xl font-extrabold text-balance sm:text-3xl">
+              Deseja informar falta de energia?
+            </h2>
+            <p class="mt-2 max-w-xl font-text text-base leading-relaxed text-accent-foreground/80">
+              Informe a falta de energia para verificarmos a sua rede elétrica. Em caso de
+              emergência, entre em contato pelo telefone ao lado.
+            </p>
+          </div>
+        </div>
 
-        <div class="mt-4 grid lg:flex flex-row  gap-3 mx-auto">
+        <div class="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
           <Button
             as="a"
             href="tel:08006484800"
             size="lg"
             variant="outline"
-            class="min-w-0 flex-1 whitespace-normal text-center leading-tight"
+            class="whitespace-nowrap border-accent-foreground/30 bg-transparent text-accent-foreground hover:bg-accent-foreground/10 hover:text-accent-foreground"
           >
             <PhoneOutgoing class="h-4 w-4 shrink-0" />
-            0800 6484800
+            0800 648 4800
           </Button>
 
           <Button
@@ -36,19 +41,12 @@ import { ArrowRight, PhoneOutgoing } from "@lucide/vue";
             href="#cooperativismo"
             size="lg"
             variant="default"
-            class="min-w-0 flex-1 whitespace-normal text-center leading-tight"
+            class="whitespace-nowrap bg-primary text-primary-foreground shadow-md hover:bg-primary/90"
           >
-            Falta de energia 
+            Informar falta de energia
             <ArrowRight class="h-4 w-4 shrink-0" />
           </Button>
         </div>
-      </div>
-      <div>
-        <img
-          src="/images/sobre-cooperativa.png"
-          alt="Técnico da CERFOX trabalhando em infraestrutura de energia"
-          class="aspect-4/3 w-full rounded-2xl object-cover shadow-lg"
-        />
       </div>
     </div>
   </section>

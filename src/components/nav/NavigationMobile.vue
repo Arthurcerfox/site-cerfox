@@ -24,64 +24,76 @@ const year = new Date().getFullYear()
       </Button>
     </SheetTrigger>
 
-    <SheetContent side="right" class="flex h-full flex-col p-0">
-      <SheetHeader class="shrink-0">
-        <SheetTitle>
+    <SheetContent
+      side="right"
+      class="flex h-full flex-col gap-0 border-l border-primary-foreground/10 bg-primary p-0 text-primary-foreground"
+    >
+      <SheetHeader class="shrink-0 gap-1 border-b border-primary-foreground/10 px-5 py-6 text-left">
+        <SheetTitle class="font-heading text-xl font-bold tracking-tight text-primary-foreground">
           Menu
         </SheetTitle>
-        <SheetDescription>
+        <SheetDescription class="text-sm text-primary-foreground">
           Navegue pelo site da CERFOX
         </SheetDescription>
       </SheetHeader>
 
-      <div class="flex-1 overflow-y-auto px-0">
+      <nav class="flex-1 overflow-y-auto px-0 py-2">
         <Accordion type="single" collapsible class="w-full">
-          <AccordionItem
+          <template
             v-for="link in navigationLinks"
             :key="link.label"
-            :value="link.label"
           >
-            <AccordionTrigger class="w-full text-left text-md px-5 text-bold">
-              {{ link.label }}
-            </AccordionTrigger>
+            <AccordionItem
+              v-if="link.items"
+              :value="link.label"
+              class="border-b border-primary-foreground/10"
+            >
+              <AccordionTrigger
+                class="w-full px-5 py-4 text-left font-heading text-base font-bold text-primary-foreground hover:no-underline [&[data-state=open]>svg]:text-accent [&>svg]:text-accent/70"
+              >
+                {{ link.label }}
+              </AccordionTrigger>
 
-            <AccordionContent>
-              <ul class="flex flex-col gap-2">
-                <li
-                  v-for="item in link.items"
-                  :key="item.href"
-                >
-                  <Button
-                    as="a"
-                    :href="item.href"
-                    variant="ghost"
-                    size="sm"
-                    class="w-full justify-start rounded-md px-5 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+              <AccordionContent class="pb-2">
+                <ul class="flex flex-col gap-1">
+                  <li
+                    v-for="item in link.items"
+                    :key="item.href"
                   >
-                    {{ item.label }}
-                  </Button>
-                </li>
-              </ul>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </div>
+                    <a
+                      :href="item.href"
+                      class="flex items-center rounded-md px-5 py-2.5 text-sm font-medium text-primary-foreground/70 transition-colors hover:bg-primary-foreground/10 hover:text-accent focus:bg-primary-foreground/10 focus:text-accent focus:outline-none"
+                      @click="open = false"
+                    >
+                      {{ item.label }}
+                    </a>
+                  </li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
 
-      <SheetFooter class="shrink-0">
+            <a
+              v-else
+              :href="link.href"
+              class="flex items-center border-b border-primary-foreground/10 px-5 py-4 font-heading text-base font-bold text-primary-foreground transition-colors hover:bg-primary-foreground/10 hover:text-accent focus:bg-primary-foreground/10 focus:text-accent focus:outline-none"
+              @click="open = false"
+            >
+              {{ link.label }}
+            </a>
+          </template>
+        </Accordion>
+      </nav>
+
+      <SheetFooter class="shrink-0 gap-4 border-primary-foreground/10 px-5 py-6">
         <SheetClose as-child>
           <Button
             variant="accent"
             size="sm"
-            class="w-full justify-center rounded-md px-4 py-2 text-sm font-bold hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+            class="w-full justify-center rounded-md px-4 py-2 text-sm font-bold"
           >
-          Fechar
+            Fechar
           </Button>
         </SheetClose>
-        <div class="mt-4 flex flex-col items-center justify-between border-t border-border pt-6 sm:flex-row">
-          <p class="text-sm text-muted-foreground">
-            &copy; {{ year }} CERFOX. Todos os direitos reservados.
-          </p>
-        </div>
       </SheetFooter>
     </SheetContent>
   </Sheet>
