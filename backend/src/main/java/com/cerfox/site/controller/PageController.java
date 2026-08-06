@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/admin/pages")
+@RequestMapping("api/v1/")
 public class PageController {
     private final PageService pageService;
 
@@ -20,26 +20,38 @@ public class PageController {
         this.pageService = pageService;
     }
 
-    @GetMapping
+    @GetMapping("/public/pages")
+    public ResponseEntity<List<PageSummaryResponse>> listPages() {
+        return ResponseEntity.ok(pageService.findAllActive());
+    }
+
+    @GetMapping("/public/pages/{slug}")
+    public ResponseEntity<PageDetailResponse> getPage(
+            @PathVariable String slug
+    ) {
+        return ResponseEntity.ok(pageService.findBySlug(slug));
+    }
+
+    @GetMapping("/admin/pages")
     public ResponseEntity<List<PageSummaryResponse>> findAll() {
         return ResponseEntity.ok(pageService.findAll());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/admin/pages/{id}")
     public ResponseEntity<PageDetailResponse> findById(
             @PathVariable Long id
     ) {
         return ResponseEntity.ok(pageService.findById(id));
     }
 
-    @PostMapping
+    @PostMapping("/admin/pages")
     public ResponseEntity<PageDetailResponse> createPage(
             @RequestBody @Valid CreatePageRequest createPageRequest
     ) {
         return ResponseEntity.ok(pageService.create(createPageRequest));
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/admin/pages/{id}")
     public ResponseEntity<PageDetailResponse> updatePage(
             @PathVariable Long id,
             @RequestBody @Valid UpdatePageRequest updatePageRequest
@@ -47,7 +59,7 @@ public class PageController {
         return ResponseEntity.ok(pageService.update(id, updatePageRequest));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/admin/pages/{id}")
     public ResponseEntity<Void> deletePage(
             @PathVariable Long id
     ) {
