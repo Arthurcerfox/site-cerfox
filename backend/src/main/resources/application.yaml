@@ -31,3 +31,8 @@ spring:
 jwt:
   secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION}
+
+app:
+  uploads:
+    dir: ${UPLOADS_DIR:./uploads}
+    url-prefix: ${UPLOADS_URL_PREFIX:/uploads}
