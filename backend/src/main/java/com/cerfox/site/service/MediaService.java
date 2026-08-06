@@ -62,7 +62,7 @@ public class MediaService {
             Files.createDirectories(dir);
             Files.copy(file.getInputStream(), dir.resolve(uniqueName), StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Falha ao salvar arquivo");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error on saving file");
         }
 
         MediaAsset asset = new MediaAsset(
@@ -78,7 +78,7 @@ public class MediaService {
 
     @Transactional
     public void delete(Long id) {
-        MediaAsset asset = mediaAssetRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Arquivo não encontrado: " + id));
+        MediaAsset asset = mediaAssetRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "File not found: " + id));
 
         try {
             Path file = Paths.get(uploadsDir).resolve(asset.getFilename());

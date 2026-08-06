@@ -1,6 +1,6 @@
 package com.cerfox.site.security;
 
-import com.cerfox.site.shared.exceptions.StandardError;
+import com.cerfox.site.exception.StandardError;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
