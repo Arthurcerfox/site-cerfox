@@ -3,9 +3,9 @@ spring:
     name: site-backend
 
   datasource:
-    url: jdbc:mysql://localhost:3306/site_cerfox?useSSL=false&allowPublicKeyRetrieval=true
-    username: cerf_admin
-    password: HMite/!_6qc=YwW
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -24,3 +24,10 @@ spring:
   flyway:
     enabled: true
     locations: classpath:db/migration
+
+  config:
+    import: optional:file:.env[.properties]
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION}
