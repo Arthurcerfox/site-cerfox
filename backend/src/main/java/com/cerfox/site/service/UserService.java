@@ -33,7 +33,7 @@ public class UserService {
         return userRepository.findAll(pageable).map(userMapper::toUserResponse);
     }
 
-    public CreateUserResponse createUser(CreateUserRequest createUserRequest) {
+    public UserResponse createUser(CreateUserRequest createUserRequest) {
         if (userRepository.existsByEmail(createUserRequest.email())) {
             throw new ConflictException("Email already in use");
         }
@@ -44,17 +44,17 @@ public class UserService {
                 encode(createUserRequest.password())
         );
 
-        return userMapper.toCreateUserResponse(userRepository.save(user));
+        return userMapper.toUserResponse(userRepository.save(user));
     }
 
-    public UpdateUserResponse updateUser(Long id, UpdateUserRequest updateUserRequest) {
+    public UserResponse updateUser(Long id, UpdateUserRequest updateUserRequest) {
         User user = userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
         if (updateUserRequest.name() != null) user.setName(updateUserRequest.name());
         if (updateUserRequest.email() != null) user.setEmail(updateUserRequest.email());
         if (updateUserRequest.password() != null) user.setPassword(encode(updateUserRequest.password()));
 
-        return userMapper.toUpdateUserResponse(userRepository.save(user));
+        return userMapper.toUserResponse(userRepository.save(user));
     }
 
     public void deleteUser(Long id) {

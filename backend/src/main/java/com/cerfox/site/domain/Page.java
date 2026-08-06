@@ -23,7 +23,7 @@ public class Page {
     private Boolean isLanding;
 
     @Column(name = "is_active", nullable = false)
-    private boolean isActive;
+    private Boolean isActive;
 
     @Column(name = "meta", columnDefinition = "JSON")
     private String meta;
@@ -52,10 +52,11 @@ public class Page {
     public Page() {
     }
 
-    public Page(String slug, String title, boolean isLanding) {
+    public Page(String slug, String title, Boolean isLanding, Boolean isActive) {
         this.slug = slug;
         this.title = title;
         this.isLanding = isLanding;
+        this.isActive = isActive;
     }
 
     public Long getId() {

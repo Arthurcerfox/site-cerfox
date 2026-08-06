@@ -63,7 +63,8 @@ public class PageService {
         Page page = new Page(
                 request.slug(),
                 request.title(),
-                request.isLanding()
+                request.isLanding(),
+                request.isActive()
         );
 
         page.setMeta(request.meta());

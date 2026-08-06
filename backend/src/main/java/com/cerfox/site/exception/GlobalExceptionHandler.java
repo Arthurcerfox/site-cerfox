@@ -23,6 +23,11 @@ public class GlobalExceptionHandler {
         return build(HttpStatus.NOT_FOUND, "NOT_FOUND", e.getMessage());
     }
 
+    @ExceptionHandler(ConflictException.class)
+    public ResponseEntity<StandardError> handleConflictException(ConflictException e) {
+        return build(HttpStatus.CONFLICT, "CONFLICT", e.getMessage());
+    }
+
     @ExceptionHandler(AuthenticationException.class)
     public ResponseEntity<StandardError> handleAuthenticationException(AuthenticationException e) {
         return build(HttpStatus.UNAUTHORIZED, "UNAUTHORIZED", e.getMessage());
@@ -45,11 +50,6 @@ public class GlobalExceptionHandler {
                 .reduce((a, b) -> a + "; " + b)
                 .orElse("Validation failed");
         return build(HttpStatus.BAD_REQUEST, "VALIDATION_FAILED", message);
-    }
-
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<StandardError> handleGenericException(Exception e) {
-        return build(HttpStatus.INTERNAL_SERVER_ERROR, "INTERNAL_SERVER_ERROR", "An unexpected error occurred, try again later");
     }
 
     private ResponseEntity<StandardError> build(HttpStatus status, String error, String message) {

@@ -4,6 +4,7 @@ import com.cerfox.site.enums.SectionType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import tools.jackson.databind.JsonNode;
 
 public record CreateSectionRequest(
         @NotBlank(message = "Key name is required")
@@ -18,10 +19,10 @@ public record CreateSectionRequest(
 
         int displayOrder,
 
-        @NotBlank(message = "Content is required")
-        String content,
+        @NotNull(message = "Content is required")
+        JsonNode content,
 
-        @NotBlank(message = "Styles is required")
-        String styles
+        @NotNull(message = "Styles is required")
+        JsonNode styles
 ) {
 }

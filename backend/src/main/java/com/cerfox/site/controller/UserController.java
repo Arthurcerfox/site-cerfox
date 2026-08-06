@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/api/v1/admin/users")
 public class UserController {
     private final UserService userService;
 
@@ -19,8 +19,8 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<Page<UserResponse>> findAll(
-            @RequestParam int page,
-            @RequestParam int size
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
     ) {
         return ResponseEntity.ok(userService.findAll(page, size));
     }
@@ -33,14 +33,14 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<CreateUserResponse> createUser(
+    public ResponseEntity<UserResponse> createUser(
             @RequestBody @Valid CreateUserRequest createUserRequest
     ) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser(createUserRequest));
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<UpdateUserResponse> updateUser(
+    public ResponseEntity<UserResponse> updateUser(
             @PathVariable Long id,
             @RequestBody @Valid UpdateUserRequest updateUserRequest
     ) {

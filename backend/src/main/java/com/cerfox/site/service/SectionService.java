@@ -40,22 +40,23 @@ public class SectionService {
     }
 
     @Transactional
-    public SectionResponse create(Long pageId, CreateSectionRequest request) {
+    public SectionResponse create(Long pageId, CreateSectionRequest createSectionRequest) {
         Page page = pageService.findPageById(pageId);
 
-        if (sectionRepository.existsByPageIdAndKeyName(pageId, request.keyName())) {
-            throw new ResourceNotFoundException("Section already exists: " + request.keyName() + "on page: " + pageId);
+        if (sectionRepository.existsByPageIdAndKeyName(pageId, createSectionRequest.keyName())) {
+            throw new ResourceNotFoundException("Section already exists: " + createSectionRequest.keyName() + "on page: " + pageId);
         }
 
         Section section = new Section(
                 page,
-                request.keyName(),
-                request.type(),
-                request.displayOrder(),
-                request.content(),
-                request.styles()
+                createSectionRequest.keyName(),
+                createSectionRequest.type(),
+                createSectionRequest.displayOrder(),
+                createSectionRequest.content().toString(),
+                createSectionRequest.styles().toString()
         );
-        section.setAnchor(request.anchor());
+
+        section.setAnchor(createSectionRequest.anchor());
         return cmsMapper.toSectionResponse(sectionRepository.save(section));
     }
 

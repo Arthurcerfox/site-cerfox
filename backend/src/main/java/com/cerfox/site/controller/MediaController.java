@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/medias")
+@RequestMapping("api/v1/admin/medias")
 public class MediaController {
     private final MediaService mediaService;
 
