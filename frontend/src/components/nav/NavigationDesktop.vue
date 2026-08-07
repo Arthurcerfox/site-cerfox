@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 import { navigationLinks } from "@/components/nav/data/links"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/new-york-v4/lib/utils"
 </script>
 
 <template>

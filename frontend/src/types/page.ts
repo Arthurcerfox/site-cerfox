@@ -3,14 +3,14 @@ import { SectionResponse } from './section'
 export interface CreatePageRequest {
     slug: string
     title: string
-    isLanding: boolean
-    meta: string
+    meta?: string
 }
 
 export interface UpdatePageRequest {
     title?: string
-    isLanding?: boolean
-    meta?: string
+    slug?: string
+    isActive?: boolean
+    meta?: unknown
 }
 
 export interface PageSummaryResponse {
@@ -27,6 +27,6 @@ export interface PageDetailResponse {
     title: string
     isLanding: boolean
     isActive: boolean
-    meta: string
+    meta: unknown
     sections: SectionResponse[]
 }

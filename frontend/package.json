@@ -13,6 +13,7 @@
     "@lucide/vue": "^1.27.0",
     "@vueuse/core": "^12.8.2",
     "aos": "^2.3.4",
+    "axios": "^1.19.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "reka-ui": "^2.10.1",

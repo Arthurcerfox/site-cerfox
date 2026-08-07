@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Zap, Sun, Wifi } from "@lucide/vue"
-import ServiceCard from "./ui/ServiceCard.vue";
+import ServiceCard from "@/components/ui/ServiceCard.vue";
 
 import DistrEnergiaFoto from "@/../public/images/teste.jpg"
 import DistrEnergiaFoto2 from "@/../public/images/hero-energia.png"

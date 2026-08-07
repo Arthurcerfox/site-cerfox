@@ -1,8 +1,21 @@
+export enum SectionType {
+  HERO = 'HERO',
+  BANNER = 'BANNER',
+  CARDS = 'CARDS',
+  TEXT = 'TEXT',
+  CONTACT = 'CONTACT',
+  VACANCIES = 'VACANCIES',
+  GALLERY = 'GALLERY',
+  FAQ = 'FAQ',
+  CTA = 'CTA',
+  CUSTOM = 'CUSTOM'
+}
+
 export interface SectionResponse {
   id: number
   keyName: string
   type: SectionType
-  anchor: string
+  anchor: string | null
   displayOrder: number
   isVisible: boolean
   content: Record<string, unknown>
@@ -12,7 +25,7 @@ export interface SectionResponse {
 export interface CreateSectionRequest {
     keyName: string
     type: SectionType
-    anchor: string
+    anchor?: string | null
     displayOrder: number
     content: Record<string, unknown>
     styles: Record<string, unknown>
@@ -32,18 +45,5 @@ export interface SectionRevisionResponse {
     styles: Record<string, unknown>
     changedBy: number
     changedAt: string
-}
-
-export enum SectionType {
-    HERO = 'HERO',
-    BANNER = 'BANNER',
-    CARDS = 'CARDS',
-    TEXT = 'TEXT',
-    CONTACT = 'CONTACT',
-    VACANCIES = 'VACANCIES',
-    GALLERY = 'GALLERY',
-    FAQ = 'FAQ',
-    CTA = 'CTA',
-    CUSTOM = 'CUSTOM',
 }
 

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import SiteHeader from "./components/SiteHeader.vue"
-import HeroSection from "./components/HeroSection.vue"
-import StatsMarquee from "./components/StatsMarquee.vue"
-import SolucoesSection from "./components/SolucoesSection.vue"
-import AboutSection from "./components/AboutSection.vue"
-import FaltaDeEnergiaSection from "./components/FaltaDeEnergiaSection.vue"
-import VagasSection from "./components/VagasSection.vue"
-import ContactSection from "./components/ContactSection.vue"
-import BlogSection from "./components/BlogSection.vue"
-import SiteFooter from "./components/SiteFooter.vue"
+import SiteHeader from "./views/SiteHeader.vue"
+import HeroSection from "./views/HeroSection.vue"
+import StatsMarquee from "./views/StatsMarquee.vue"
+import SolucoesSection from "./views/SolucoesSection.vue"
+import AboutSection from "./views/AboutSection.vue"
+import FaltaDeEnergiaSection from "./views/FaltaDeEnergiaSection.vue"
+import VagasSection from "./views/VagasSection.vue"
+import ContactSection from "./views/ContactSection.vue"
+import BlogSection from "./views/BlogSection.vue"
+import SiteFooter from "./views/SiteFooter.vue"
 </script>
 
 <template>
