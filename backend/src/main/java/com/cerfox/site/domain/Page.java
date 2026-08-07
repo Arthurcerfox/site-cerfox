@@ -20,10 +20,10 @@ public class Page {
     private String title;
 
     @Column(name = "is_landing", nullable = false)
-    private Boolean isLanding;
+    private boolean isLanding = false;
 
     @Column(name = "is_active", nullable = false)
-    private Boolean isActive;
+    private boolean isActive = true;
 
     @Column(name = "meta", columnDefinition = "JSON")
     private String meta;
@@ -52,11 +52,10 @@ public class Page {
     public Page() {
     }
 
-    public Page(String slug, String title, Boolean isLanding, Boolean isActive) {
+    public Page(String slug, String title, String meta) {
         this.slug = slug;
         this.title = title;
-        this.isLanding = isLanding;
-        this.isActive = isActive;
+        this.meta = meta;
     }
 
     public Long getId() {

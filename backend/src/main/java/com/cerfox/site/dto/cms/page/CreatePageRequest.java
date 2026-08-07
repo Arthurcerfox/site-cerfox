@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import tools.jackson.databind.JsonNode;
 
 public record CreatePageRequest(
         @NotBlank(message = "Slug is required")
@@ -15,11 +16,6 @@ public record CreatePageRequest(
         @Size(max = 200, message = "Title must not exceed 200 characters")
         String title,
 
-        @NotNull(message = "isLanding is required")
-        Boolean isLanding,
-        @NotNull(message = "isActive is required")
-        Boolean isActive,
-
-        String meta
+        JsonNode meta
 ) {
 }

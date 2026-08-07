@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface NavigationItemRepository extends JpaRepository<NavigationItem, Long> {
     List<NavigationItem> findByParentIsNullOrderByDisplayOrderAsc();
+    int countByParentId(Long parentId);
+    int countByParentIsNull();
 }

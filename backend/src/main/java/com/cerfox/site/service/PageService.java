@@ -63,11 +63,9 @@ public class PageService {
         Page page = new Page(
                 request.slug(),
                 request.title(),
-                request.isLanding(),
-                request.isActive()
+                request.meta() != null ? request.meta().toString() : null
         );
 
-        page.setMeta(request.meta());
         return cmsMapper.toDetail(pageRepository.save(page));
     }
 
@@ -77,7 +75,13 @@ public class PageService {
 
         if (request.title() != null) page.setTitle(request.title());
         if (request.isActive() != null) page.setActive(request.isActive());
-        if (request.meta() != null) page.setMeta(request.meta());
+        if (request.meta() != null) page.setMeta(request.meta().toString());
+        if (request.slug() != null) {
+            if (pageRepository.existsBySlugAndIdNot(request.slug(), id)) {
+                throw new ConflictException("Slug already in use: " + request.slug());
+            }
+            page.setSlug(request.slug());
+        }
 
         return cmsMapper.toDetail(pageRepository.save(page));
     }
@@ -86,6 +90,41 @@ public class PageService {
     public void delete(Long id) {
         Page page = findPageById(id);
         pageRepository.delete(page);
+    }
+
+    @Transactional
+    public PageDetailResponse setAsLanding(Long pageId) {
+        Page target = findPageById(pageId);
+
+        pageRepository.findByIsLandingTrue().ifPresent(current -> {
+            if (!current.getId().equals(pageId)) {
+                current.setLanding(false);
+                pageRepository.save(current);
+            }
+        });
+
+        target.setLanding(true);
+        return cmsMapper.toDetail(pageRepository.save(target));
+    }
+
+    @Transactional
+    public PageDetailResponse activate(Long pageId) {
+        Page page = findPageById(pageId);
+
+        page.setActive(true);
+        return cmsMapper.toDetail(pageRepository.save(page));
+    }
+
+    @Transactional
+    public PageDetailResponse deactivate(Long pageId) {
+        Page page = findPageById(pageId);
+
+        if (page.isLanding()) {
+            throw new ConflictException("Cannot deactivate the landing page. Set another page as landing first.");
+        }
+
+        page.setActive(false);
+        return cmsMapper.toDetail(pageRepository.save(page));
     }
 
     protected Page findPageById(Long id) {

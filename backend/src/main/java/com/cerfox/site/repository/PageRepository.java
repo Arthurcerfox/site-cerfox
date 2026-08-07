@@ -13,6 +13,9 @@ public interface PageRepository extends JpaRepository<Page, Long> {
     Optional<Page> findBySlug(String slug);
 
     List<Page> findAllByIsActiveTrue();
+    Optional<Page> findByIsLandingTrue();
 
     boolean existsBySlug(String slug);
+    boolean existsBySlugAndIdNot(String slug, Long id);
+
 }

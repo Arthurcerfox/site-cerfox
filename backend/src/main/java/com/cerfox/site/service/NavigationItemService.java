@@ -39,19 +39,20 @@ public class NavigationItemService {
     public NavigationItemResponse create(CreateNavigationItemRequest request) {
         validateHrefXorPage(request.href(), request.pageId());
 
+        int order = request.displayOrder() != null ? request.displayOrder() : nextDisplayOrder(request.parentId());
+
         NavigationItem item = new NavigationItem(
                 request.label(),
                 request.href(),
-                request.displayOrder()
+                order
         );
 
         if (request.parentId() != null) {
             NavigationItem parent = navigationItemRepository.findById(request.parentId()).orElseThrow(() -> new ResourceNotFoundException("Parent navigation item not found: " + request.parentId()));
             item.setParent(parent);
         }
-
         if (request.pageId() != null) {
-            Page page = pageRepository.findById(request.pageId()).orElseThrow(() -> new ResourceNotFoundException("Page not found: " + request.pageId()));
+            Page page = pageRepository.findById(request.pageId()).orElseThrow(() -> new ResourceNotFoundException("Page navigation item not found: " + request.pageId()));
             item.setPage(page);
         }
 
@@ -84,6 +85,12 @@ public class NavigationItemService {
     public void delete(Long id) {
         NavigationItem item = navigationItemRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Navigation item not found"));
         navigationItemRepository.delete(item);
+    }
+
+    private int nextDisplayOrder(Long parentId) {
+        return parentId != null
+                ? navigationItemRepository.countByParentId(parentId)
+                : navigationItemRepository.countByParentIsNull();
     }
 
     private void validateHrefXorPage(String href, Long pageId) {

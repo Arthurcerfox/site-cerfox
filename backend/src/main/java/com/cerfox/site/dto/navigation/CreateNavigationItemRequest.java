@@ -15,5 +15,5 @@ public record CreateNavigationItemRequest(
 
         Long pageId,
 
-        int displayOrder
+        Integer displayOrder
 ) {}

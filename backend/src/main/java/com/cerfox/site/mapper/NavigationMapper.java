@@ -20,6 +20,8 @@ public class NavigationMapper {
 
         return new NavigationItemResponse(
                 item.getId(),
+                item.getParent() != null ? item.getParent().getId() : null,
+                item.getDisplayOrder(),
                 item.getLabel(),
                 resolvedHref,
                 children.isEmpty() ? null : children

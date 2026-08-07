@@ -1,10 +1,12 @@
 package com.cerfox.site.exception;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -18,9 +20,9 @@ public class GlobalExceptionHandler {
         return build(e.getHttpStatus(), "ERROR", e.getMessage());
     }
 
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<StandardError> handleResourceNotFoundException(ResourceNotFoundException e) {
-        return build(HttpStatus.NOT_FOUND, "NOT_FOUND", e.getMessage());
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public ResponseEntity<StandardError> handleUsernameNotFoundException(UsernameNotFoundException e) {
+        return build(HttpStatus.BAD_REQUEST, "BAD_REQUEST", e.getMessage());
     }
 
     @ExceptionHandler(ConflictException.class)
@@ -41,6 +43,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<StandardError> handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
         return build(HttpStatus.BAD_REQUEST, "BAD_REQUEST", "Invalid JSON format");
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<StandardError> handleDataIntegrityViolationException(DataIntegrityViolationException e) {
+        return build(HttpStatus.CONFLICT, "CONFLICT", e.getMessage());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

@@ -66,4 +66,25 @@ public class PageController {
         pageService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PatchMapping("/admin/pages/{id}/landing")
+    public ResponseEntity<PageDetailResponse> updateLanding(
+            @PathVariable Long id
+    ) {
+        return ResponseEntity.ok(pageService.setAsLanding(id));
+    }
+
+    @PatchMapping("/admin/pages/{id}/activate")
+    public ResponseEntity<PageDetailResponse> activate(
+            @PathVariable Long id
+    ) {
+        return ResponseEntity.ok(pageService.activate(id));
+    }
+
+    @PatchMapping("/admin/pages/{id}/deactivate")
+    public ResponseEntity<PageDetailResponse> deactivate(
+            @PathVariable Long id
+    ) {
+        return ResponseEntity.ok(pageService.deactivate(id));
+    }
 }
