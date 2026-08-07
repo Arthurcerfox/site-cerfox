@@ -25,6 +25,11 @@ public class PageController {
         return ResponseEntity.ok(pageService.findAllActive());
     }
 
+    @GetMapping("/public/pages/landing")
+    public ResponseEntity<PageDetailResponse> listLandingPage() {
+        return ResponseEntity.ok(pageService.findLanding());
+    }
+
     @GetMapping("/public/pages/{slug}")
     public ResponseEntity<PageDetailResponse> getPage(
             @PathVariable String slug

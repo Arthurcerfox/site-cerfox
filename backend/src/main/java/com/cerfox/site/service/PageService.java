@@ -41,6 +41,11 @@ public class PageService {
     }
 
     @Transactional(readOnly = true)
+    public PageDetailResponse findLanding() {
+        return cmsMapper.toDetail(pageRepository.findByIsLandingTrue().orElseThrow(() -> new ResourceNotFoundException("Page not found")));
+    }
+
+    @Transactional(readOnly = true)
     public List<PageSummaryResponse> findAll() {
         return pageRepository.findAll()
                 .stream()
