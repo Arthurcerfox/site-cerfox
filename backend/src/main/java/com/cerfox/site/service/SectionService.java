@@ -74,8 +74,8 @@ public class SectionService {
             sectionRevisionRepository.save(revision);
         }
 
-        if (updateSectionRequest.content() != null) section.setContent(updateSectionRequest.content());
-        if (updateSectionRequest.styles() != null) section.setStyles(updateSectionRequest.styles());
+        if (updateSectionRequest.content() != null) section.setContent(updateSectionRequest.content().toString());
+        if (updateSectionRequest.styles() != null) section.setStyles(updateSectionRequest.styles().toString());
         if (updateSectionRequest.displayOrder() != null) section.setDisplayOrder(updateSectionRequest.displayOrder());
         if (updateSectionRequest.isVisible() != null) section.setVisible(updateSectionRequest.isVisible());
         if (updateSectionRequest.anchor() != null) section.setAnchor(updateSectionRequest.anchor());

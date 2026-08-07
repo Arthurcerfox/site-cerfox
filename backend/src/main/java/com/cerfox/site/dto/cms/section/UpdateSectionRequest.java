@@ -1,9 +1,11 @@
 package com.cerfox.site.dto.cms.section;
 
 
+import tools.jackson.databind.JsonNode;
+
 public record UpdateSectionRequest(
-        String content,
-        String styles,
+        JsonNode content,
+        JsonNode styles,
         Integer displayOrder,
         Boolean isVisible,
         String anchor
